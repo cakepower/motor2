@@ -1,16 +1,15 @@
 basic.forever(function () {
-    motorbit.turnright(pins.map(
+    motorbit.freestyle(pins.map(
     pins.analogReadPin(AnalogPin.P3),
     0,
     1023,
-    0,
+    -100,
     100
-    ))
-    motorbit.turnleft(pins.map(
+    ), pins.map(
     pins.analogReadPin(AnalogPin.P3),
     0,
     1023,
-    0,
+    -100,
     100
     ))
 })
