@@ -1,11 +1,39 @@
 serial.redirectToUSB()
 serial.setBaudRate(BaudRate.BaudRate115200)
 basic.forever(function () {
-    pins.servoWritePin(AnalogPin.P4, pins.map(
+    pins.servoWritePin(AnalogPin.P5, pins.map(
     pins.analogReadPin(AnalogPin.P3),
     0,
     1023,
     -180,
+    180
+    ))
+    pins.servoWritePin(AnalogPin.P6, pins.map(
+    pins.analogReadPin(AnalogPin.P3),
+    0,
+    1023,
+    -180,
+    180
+    ))
+    pins.servoWritePin(AnalogPin.P11, pins.map(
+    pins.analogReadPin(AnalogPin.P3),
+    0,
+    1023,
+    0,
+    180
+    ))
+    pins.servoWritePin(AnalogPin.P14, pins.map(
+    pins.analogReadPin(AnalogPin.P3),
+    0,
+    1023,
+    0,
+    180
+    ))
+    pins.servoWritePin(AnalogPin.P13, pins.map(
+    pins.analogReadPin(AnalogPin.P3),
+    0,
+    1023,
+    0,
     180
     ))
     pins.servoWritePin(AnalogPin.P10, pins.map(
