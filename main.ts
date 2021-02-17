@@ -15,34 +15,15 @@ basic.forever(function () {
     -180,
     180
     ))
-    pins.servoWritePin(AnalogPin.P11, pins.map(
-    pins.analogReadPin(AnalogPin.P3),
-    0,
-    1023,
-    0,
-    180
-    ))
-    pins.servoWritePin(AnalogPin.P14, pins.map(
-    pins.analogReadPin(AnalogPin.P3),
-    0,
-    1023,
-    0,
-    180
-    ))
-    pins.servoWritePin(AnalogPin.P13, pins.map(
-    pins.analogReadPin(AnalogPin.P3),
-    0,
-    1023,
-    0,
-    180
-    ))
-    pins.servoWritePin(AnalogPin.P10, pins.map(
-    pins.analogReadPin(AnalogPin.P3),
-    0,
-    1023,
-    0,
-    180
-    ))
-    serial.writeNumber(pins.analogReadPin(AnalogPin.P3))
-    serial.writeLine("")
+    if (input.soundLevel() > 50 && input.soundLevel() < 160) {
+        serial.writeNumber(input.soundLevel())
+        serial.writeLine("")
+        pins.servoWritePin(AnalogPin.P13, 120)
+        pins.servoWritePin(AnalogPin.P11, 120)
+        motorbit.freestyle(30, 30)
+    } else {
+        motorbit.freestyle(0, 0)
+        pins.servoWritePin(AnalogPin.P13, 0)
+        pins.servoWritePin(AnalogPin.P11, 0)
+    }
 })
